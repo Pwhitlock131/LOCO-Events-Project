@@ -12,4 +12,4 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
     return event.json()
    }).then(function(data) {
     console.log(data)
-   });
+
