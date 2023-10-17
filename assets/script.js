@@ -1,0 +1,1 @@
+$ curl 'https://api.seatgeek.com/2/events/739515?callback=fireEvent'
