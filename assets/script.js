@@ -13,5 +13,3 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
     console.log(data)
    });
 
-
-// fetch ('https://pcmiler.alk.com/apis/rest/v1.0/Service.svc/maptile?X=14&Y=25&Z=6&dataset=PCM_NA&authtoken=41DAB7CE2BF5B4488F8EBC315E0E3A8D')
