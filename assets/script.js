@@ -18,6 +18,8 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
         zoom: 12 
     });
 
+
+
 // map quest API 
    fetch ('https://www.mapquestapi.com/geocoding/v1/address?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7&location=Washington,DC')
    .then(function(event) {
@@ -25,3 +27,20 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
    }).then(function(data) {
     console.log(data)
    });
+
+
+   var map = L.mapquest.map
+
+   // after clicking a event icon, icons representing the event display on the interactive map
+   function showPlacesOnMap(lat,lng) {
+        fetch("https://www.mapquestapi.com/geocoding/v1/address?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7&location=Washington,DC")
+        .then (response => response.json())
+        .then(data => {
+            data.events.forEach(event =>{
+                L.marker([event.lattitude, event.longitude]).addTo(map)
+                .bindPopup(event.type)
+
+
+            });   
+        })
+   }
