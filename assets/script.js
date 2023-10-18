@@ -18,6 +18,11 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
         zoom: 12 
     });
 
+
+    placeSearch({
+        key: 'uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7',
+        container: document.querySelector('#place-search-input')
+    });
 // map quest API 
    fetch ('https://www.mapquestapi.com/geocoding/v1/address?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7&location=Washington,DC')
    .then(function(event) {
@@ -25,3 +30,6 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
    }).then(function(data) {
     console.log(data)
    });
+
+   fetch.curl -X; GET -H; 'x-mq-user-id: ABC-123'; 'https://www.mapquestapi.com/search/v3/prediction?key=KEY&limit=5&feedback=true&collection=airport&q=den';
+
