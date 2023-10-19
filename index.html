@@ -2,15 +2,57 @@
 <html lang="en">
 
 <head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>LOCO Events</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOCO Events</title>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"/>
+
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
-
 </head>
+
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons btn-floating btn-large pulse blue-grey">cloud</i>Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li><a href="badges.html"><i class="material-icons">golf_course</i></a></li>
+        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+        <li><a href="mobile.html"><i class="material-icons ">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="./assets/imgs/concert.jpg" alt="concert"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Maps</h2>
+      <div class="search" style="margin: 10px; padding: 15px; ">search</div>
+      <div id="map" class="col s6 m12" style="width: 73vw; height: 100vh;"></div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="./assets/imgs/concert.jpg" alt="concert">
+      </div>
+    </div>
+
+
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 
 <header>
     <nav>
@@ -25,7 +67,20 @@
         </div>
     </nav>
 
-    <ul id="slide-out" class="sidenav">
+    <nav>
+        <div class="nav-wrapper">
+          <form>
+            <div class="input-field">
+              <input type="search" id="place-search-input" placeholder="Search">
+              <label class="label-icon" for="place-search-input"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+
+
+    <!-- <ul id="slide-out" class="sidenav">
         <li><div class="user-view">
           <div class="background">
             <img src="images/office.jpg">
@@ -40,18 +95,16 @@
         <li><a class="subheader">Subheader</a></li>
         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
       </ul>
-      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
 </header>
 
 <body>
-
     <div class="row">
         <div class="col s3">
             <!-- Grey navigation panel -->
         </div>
         <div class="col s12 m8 19">
             <!-- Teal page content  -->
-            <div class="search" style="margin: 10px; padding: 15px; ">search</div>
             <div id="map" class="col s6 m12" style="width: 73vw; height: 100vh;"></div>
         </div>
     </div>
@@ -59,6 +112,7 @@
 
     <section></section>
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 
