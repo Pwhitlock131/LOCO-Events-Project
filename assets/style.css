@@ -1,4 +1,9 @@
-#map {
+
+.parallax-container {
+  height: 500px;
+}
+
+/* #map {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -13,5 +18,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
+} */
