@@ -1,7 +1,10 @@
-/* 
 .parallax-container {
-  height: 500px;
-} */
+  height: 800px;
+}
+
+.map{
+  box-shadow: 10;
+}
 
 /* #map {
     height: 100%;
