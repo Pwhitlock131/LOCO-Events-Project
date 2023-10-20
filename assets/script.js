@@ -1,5 +1,18 @@
 var sgAPI = 'a2cc90604895d8502a57823b96d8268669aa7a1d0e757f97cd311e3200deb9b9';
 var mqAPI = 'uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7';
+var sportGames
+var concerts
+var dates
+var location
+
+
+//Need to get search bar working for the map
+//Need to figure out how to have the geekseat and mapquest work together
+//Need to show time and place for seached event
+
+
+
+
 
 
 //Seat Geek API and CLient ID
