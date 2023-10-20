@@ -23,12 +23,16 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
         console.log(data)
     });
 
+<<<<<<< HEAD
 placeSearch({
   key: 'uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7',
   container: document.querySelector('#place-search-input')
 });
 
 // map quest API 
+=======
+
+>>>>>>> ac42647 (added 2nd API)
    fetch ('https://www.mapquestapi.com/geocoding/v1/address?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7&location=Washington,DC')
    .then(function(event) {
     return event.json()
@@ -37,6 +41,7 @@ placeSearch({
    });
 
 
+<<<<<<< HEAD
 
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.parallax');
@@ -49,3 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+=======
+// fetch ('https://pcmiler.alk.com/apis/rest/v1.0/Service.svc/maptile?X=14&Y=25&Z=6&dataset=PCM_NA&authtoken=41DAB7CE2BF5B4488F8EBC315E0E3A8D')
+    
+>>>>>>> ac42647 (added 2nd API)
