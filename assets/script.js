@@ -23,19 +23,11 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
         console.log(data)
     });
 
-    L.mapquest.key = 'uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7';
+placeSearch({
+  key: 'uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7',
+  container: document.querySelector('#place-search-input')
+});
 
-    L.mapquest.map('map', {
-        center: [37.7749, -122.4194],
-        layers: L.mapquest.tileLayer('map'),
-        zoom: 12 
-    });
-
-
-    placeSearch({
-        key: 'uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7',
-        container: document.querySelector('#place-search-input')
-    });
 // map quest API 
    fetch ('https://www.mapquestapi.com/geocoding/v1/address?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7&location=Washington,DC')
    .then(function(event) {
@@ -44,4 +36,16 @@ fetch ('https://api.seatgeek.com/2/events?client_id=Mzc1Nzk2MDZ8MTY5NzUwMTk2Mi45
     console.log(data)
    });
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.parallax');
+  var instances = M.Parallax.init(elems,);
+});
+     
+
    fetch.curl -X; GET -H; 'x-mq-user-id: ABC-123'; 'https://www.mapquestapi.com/search/v3/prediction?key=KEY&limit=5&feedback=true&collection=airport&q=den';
+
+
+
+
