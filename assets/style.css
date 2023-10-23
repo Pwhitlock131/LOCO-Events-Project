@@ -3,7 +3,7 @@
   height: 500px;
 }
 
-/* #map {
+#map {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -18,4 +18,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+}
+
+body{
+    background-color: rgb(10, 10, 129);
+  }
+  
+  .parallax-container {
+    height: 100vh;
+  }
+  
+  .sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 999;
+    background-color: #fff;
+    transition: left 0.3s;
+  }
+  
+  .sidenav a {
+    padding: 15px 15px 15px 30px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: color 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #00796b;
+  }
+  
+  @media only screen and (max-width: 992px) {
+    header {
+      padding-left: 0;
+    }
+  }
+  
