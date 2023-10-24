@@ -1,188 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"
-    />
-    <link rel="stylesheet" href="/assets/style.css" />
-    <title>LOCO Events</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div
-          class="nav-wrapper"
-          style="background-color: rgb(10, 10, 129); height: 90px"
-        >
-          <a href="#!" class="brand-logo"
-            ><img
-              src="/assets/imgs/IMG_1923.PNG"
-              style="height: 90px; width: 200px"
-              alt="Loco-event-logo"
-          /></a>
-          <ul class="right buttonPositioning">
-            <!-- experiment with this once u need to set buttons to send user to icons on map -->
-            <!-- not sure why this is not opening side nav -->
-            <!-- <a href="#" data-target="slide-out" id="search">
-              <li>
-                <i class="material-icons">search</i></a>
-              </li>
-            </a> -->
-            <a href="#map" id="baseball">
-              <li>
-                <i
-                  class="fa-solid fa-baseball"
-                  data-position="bottom"
-                  data-tooltip="Baseball"
-                >
-                </i>
-              </li>
-            </a>
-            <a href="#map" id="football">
-              <li>
-                <i
-                  class="fa-solid fa-football"
-                  data-position="bottom"
-                  data-tooltip="Football"
-                >
-                </i>
-              </li>
-            </a>
-            <a href="#map" id="Concert">
-              <li>
-                <i
-                  class="fa-solid fa-music"
-                  data-position="bottom"
-                  data-tooltip="concert"
-                >
-                </i>
-              </li>
-            </a>
-            <a href="#map" id="football">
-              <li>
-                <i
-                  class="fa-solid fa-futbol"
-                  data-position="bottom"
-                  data-tooltip="Soccer"
-                >
-                </i>
-              </li>
-            </a>
-            <!-- <li style="margin: 0 27px; padding: 10px;"><a href="map" id="baseball"></a><i
-              class="fa-solid fa-baseball tooltipped" data-position="bottom" data-tooltip="Baseball"></i></li>
-          <li style="margin: 0 27px;padding: 10px;"><a href="collapsible.html" id="football"></a><i
-              class="fa-solid fa-football tooltipped" data-position="bottom" data-tooltip="Football"></i></li>
-          <li style="margin: 0 27px;padding: 10px;"><a href="collapsible.html" id="concert"></a><i
-              class="fa-solid fa-music tooltipped" data-position="bottom" data-tooltip="concert"></i></li>
-          <li style="margin: 0 27px;padding: 10px;"><a href="collapsible.html" id="concert"></a><i
-              class="fa-regular fa-futbol  tooltipped" data-position="bottom" data-tooltip="Soccer">
-            </i></li> -->
-          </ul>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>LOCO Events</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper" style="background-color: rgb(10, 10, 129); height: 90px;">
+        <a href="#!" class="brand-logo"><img src="./assets/imgs/Loco-logo.JPG" style="height: 90px; width: 200px;"
+            alt="Loco-event-logo"></a>
+        <ul class="right hide-on-med-and-down">
+          <li style="margin: 0 27px;padding: 10px;"><i id="comedy" class="fa-solid fa-masks-theater btn tooltipped"
+              data-position="bottom" data-type="Comedy" style="background-color: rgb(215, 215, 223);"></i></li>
+          <li style="margin: 0 27px;padding: 10px;"><i id="sports" class="fa-solid fa-baseball-bat-ball btn tooltipped"
+              data-position="bottom" data-tooltip="Sports" style="background-color: rgb(98, 98, 190);"></i></li>
+          <li style="margin: 0 27px;padding: 10px;"><i id="concerts" class="fa-solid fa-music btn tooltipped"
+              data-position="bottom" data-tooltip="concerts" style="background-color: rgb(96, 96, 102);"></i></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <a href="#" data-target="slide-out"><i class="material-icons">search</i></a>
+
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="./assets/imgs/textures-abstract.jpg" alt="Loco-logo">
         </div>
-      </nav>
-    </header>
-    <a href="#" data-target="slide-out"><i class="material-icons">search</i></a>
-    <ul id="slide-out" class="sidenav">
-      <li>
-        <div class="user-view">
-          <div class="background">
-            <img
-              src="/assets/imgs/textures-abstract.jpg"
-              alt="Loco-logo"
-            />
-          </div>
-          <a href="#" id="eventIcons"
-            ><img
-              id="eventIcon"
-              class="circle"
-              src="/assets/imgs/Loco-logo.JPG"
-          /></a>
-          <a href="#" id="eventTitles"
-            ><span id="eventTitle" class="white-text name"
-              >Search for an upcoming event!</span
-            ></a
-          >
-          <a href="#" id="eventDates"
-            ><span id="eventDate" class="white-text email"></span
-          ></a>
+        <a href="#" id="eventIcons"><img id="eventIcon" class="circle" src="./assets/imgs/Loco-logo.JPG"></a>
+        <a href="#" id="eventTitles"><span id="eventTitle" class="white-text name">Search for an upcoming event!</span></a>
+        <a href="#" id="eventDates"><span id="eventDate" class="white-text email"></span></a>
+      </div>
+    </li>
+
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input type="search" id="place-search-input" placeholder="Search">
+          <label class="label-icon" for="place-search-input"><i onclick="searchEvent()"
+              class="material-icons">search</i></label>
         </div>
-      </li>
-      <div class="nav-wrapper">
-        <form>
-          <div class="input-field">
-            <input type="search" id="place-search-input" placeholder="Search" />
-            <label class="label-icon" for="place-search-input"
-              ><i onclick="searchEvent()" class="material-icons"
-                >search</i
-              ></label
-            >
-          </div>
-        </form>
-      </div>
-      <!-- ISSUE -->
-      <!-- When i click on the venue name or address THEN the webpage directs me to the map and adds a icon on the map where the venue is located -->
-      <!-- link using a tag ID -->
-      <a id="sendUserToVenue" href="#">
-        <li id="eventVenueName"></li>
-        <li id="eventVenueAddress"></li>
-      </a>
-      <li>
-        <div class="divider"></div>
-      </li>
-      <li><a class="subheader">Get Tickets!</a></li>
-      <li><a id="eventURL" class="waves-effect" href="#!"></a></li>
-    </ul>
-    <div class="parallax-container">
-      <div class="parallax">
-        <img
-          src="/assets/imgs/concert.jpg"
-          alt="concert"
-          style="width: 100%"
-        />
-      </div>
+      </form>
+      <li><a class="subheader">Recent Searches</a></li>
+      <ul id="recent-search-list" class="collection"></ul>
     </div>
-    <div class="section white">
-      <div class="row container">
-        <h2 class="header">Maps</h2>
-        <a href="#" data-target="slide-out" class="sidenav-trigger btn"
-          ><i class="material-icons">search</i></a
-        >
-        <div
-          id="map"
-          class="col s6 m12"
-          style="width: 73vw; height: 100vh"
-        ></div>
-      </div>
+    
+    <li><a class="subheader">Location</a></li>
+    <a id="sendUserToVenue" href="#">
+      <li id="eventVenueName"></li>
+      <li id="eventVenueAddress"></li>
+    </a>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Get Tickets!</a></li>
+    <li><a id="eventURL" class="waves-effect" href="#!"></a></li>
+  </ul>
+
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="./assets/imgs/concert.jpg" alt="concert" style="width: 100%;"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Maps</h2>
+<<<<<<< HEAD
+      <a href="#" data-target="slide-out" class="sidenav-trigger btn"><i class="material-icons">search</i></a>
+=======
+>>>>>>> main
+      <div id="map" class="col s6 m12" style="width: 73vw; height: 100vh;"></div>
     </div>
-    <div class="parallax-container">
-      <div class="parallax">
-        <img src="/assets/imgs/cowboys.jpg" alt="concert" />
-      </div>
+  </div>
+  <div class="parallax-container">
+<<<<<<< HEAD
+    <div class="parallax"><img src=".//assets/imgs/cowboys.jpg" alt="concert">
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7"></script>
-    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/ee7eeb04f5.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/assets/script.js"></script>
-  </body>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7"></script>
+  <script
+    src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7"></script>
+  <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://kit.fontawesome.com/ee7eeb04f5.js" crossorigin="anonymous"></script>
+=======
+    <div class="parallax"><img src="./assets/imgs/cowboys.jpg" alt="concert">
+    </div>
+  </div>
+
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+>>>>>>> main
+  <script src="./assets/script.js"></script>
+</body>
+
 </html>
