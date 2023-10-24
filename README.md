@@ -16,7 +16,7 @@ Users can also use the side nav by clicking the blue search button to search mor
 
 * Link:
 
-[LOCOEvents]()
+[LOCOEvents](https://pwhitlock131.github.io/LOCO-Events-Project/)
 
 
 
