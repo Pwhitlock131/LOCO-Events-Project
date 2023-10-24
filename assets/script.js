@@ -157,6 +157,41 @@ function displaySavedSearchValue() {
   }
 }
 
+// save to local storage
+function saveSearchValue() {
+  const inputValue = document.getElementById('place-search-input').value;
+  if (inputValue) {
+    if (typeof Storage !== 'undefined') {
+      let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+      recentSearches.push(inputValue);
+      localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+      displaySavedSearchValue();
+    } else {
+      alert('Local storage is not available in your browser.');
+    }
+  }
+}
+
+function displayRecentSearches() {
+  const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+  const recentSearchList = document.getElementById('recent-search-list');
+
+  recentSearchList.innerHTML = '';
+
+  for (const searchValue of recentSearches) {
+    const listItem = document.createElement('li');
+    listItem.textContent = searchValue;
+    listItem.addEventListener('click', function() {
+
+    });
+    recentSearchList.appendChild(listItem);
+  }
+}
+
+window.onload = function() {
+  displayRecentSearches();
+};
+
 displaySavedSearchValue();
 
 document.getElementById("baseball").addEventListener("click", () => {
