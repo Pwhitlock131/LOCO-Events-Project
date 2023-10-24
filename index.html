@@ -7,6 +7,7 @@
   <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
   <link rel="stylesheet" href="./assets/style.css">
   <title>LOCO Events</title>
 </head>
@@ -14,43 +15,97 @@
 <body>
   <header>
     <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-          <li><a href="badges.html"><i class="material-icons">golf_course</i></a></li>
-          <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-          <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      <div class="nav-wrapper" style="background-color: rgb(10, 10, 129); height: 90px;">
+        <a href="#!" class="brand-logo"><img src="./Develop/assets/images/Loco-logo.JPG"
+            style="height: 90px; width: 200px;" alt="Loco-event-logo"></a>
+        <ul class="right buttonPositioning">
+          <!-- experiment with this once u need to set buttons to send user to icons on map -->
+          <!-- not sure why this is not opening side nav -->
+          <!-- <a href="#" data-target="slide-out" id="search">
+              <li>
+                <i class="material-icons">search</i></a>
+              </li>
+            </a> -->
+          <a href="#" id="baseball">
+            <li>
+              <i class="fa-solid fa-baseball " data-position="bottom" data-tooltip="Baseball">
+              </i>
+            </li>
+          </a>
+          <a href="#" id="football">
+            <li>
+              <i class="fa-solid fa-football " data-position="bottom" data-tooltip="Football">
+              </i>
+            </li>
+          </a>
+          <a href="#" id="Concert">
+            <li>
+              <i class="fa-solid fa-music " data-position="bottom" data-tooltip="concert">
+              </i>
+            </li>
+          </a>
+          <a href="#" id="football">
+            <li>
+              <i class="fa-solid fa-futbol " data-position="bottom" data-tooltip="Soccer">
+              </i>
+            </li>
+          </a>
+          <!-- <li style="margin: 0 27px; padding: 10px;"><a href="map" id="baseball"></a><i
+              class="fa-solid fa-baseball tooltipped" data-position="bottom" data-tooltip="Baseball"></i></li>
+          <li style="margin: 0 27px;padding: 10px;"><a href="collapsible.html" id="football"></a><i
+              class="fa-solid fa-football tooltipped" data-position="bottom" data-tooltip="Football"></i></li>
+          <li style="margin: 0 27px;padding: 10px;"><a href="collapsible.html" id="concert"></a><i
+              class="fa-solid fa-music tooltipped" data-position="bottom" data-tooltip="concert"></i></li>
+          <li style="margin: 0 27px;padding: 10px;"><a href="collapsible.html" id="concert"></a><i
+              class="fa-regular fa-futbol  tooltipped" data-position="bottom" data-tooltip="Soccer">
+            </i></li> -->
         </ul>
       </div>
     </nav>
-
-    <nav>
-      <div class="nav-wrapper">
-        <form>
-          <div class="input-field">
-            <input type="search" id="place-search-input" placeholder="Search">
-            <label class="label-icon" for="place-search-input"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-        </form>
-      </div>
-    </nav>
   </header>
-  
- 
+  <a href="#" data-target="slide-out"><i class="material-icons">search</i></a>
   <ul id="slide-out" class="sidenav">
-    <li><a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
-</ul>
-<a href="#" data-target="slide-out" class="sidenav-trigger btn"><i class="material-icons">menu</i></a>
-
-
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="./Develop/assets/images/textures-abstract.jpg" alt="Loco-logo">
+        </div>
+        <a href="#" id="eventIcons"><img id="eventIcon" class="circle" src="./Develop/assets/images/Loco-logo.JPG"></a>
+        <a href="#" id="eventTitles"><span id="eventTitle" class="white-text name">Search for an upcoming
+            event!</span></a>
+        <a href="#" id="eventDates"><span id="eventDate" class="white-text email"></span></a>
+      </div>
+    </li>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input type="search" id="place-search-input" placeholder="Search">
+          <label class="label-icon" for="place-search-input"><i onclick="searchEvent()"
+              class="material-icons">search</i></label>
+          <ul id="recent-search-list" class="collection"></ul>
+        </div>
+      </form>
+    </div>
+    <!-- ISSUE -->
+    <!-- When i click on the venue name or address THEN the webpage directs me to the map and adds a icon on the map where the venue is located -->
+    <!-- link using a tag ID -->
+    <a id="sendUserToVenue" href="#">
+      <li id="eventVenueName"></li>
+      <li id="eventVenueAddress"></li>
+    </a>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Get Tickets!</a></li>
+    <li><a id="eventURL" class="waves-effect" href="#!"></a></li>
+  </ul>
   <div class="parallax-container">
-    <div class="parallax"><img src="./assets/imgs/concert.jpg" alt="concert"></div>
+    <div class="parallax"><img src="./assets/imgs/concert.jpg" alt="concert" style="width: 100%;"></div>
   </div>
   <div class="section white">
     <div class="row container">
       <h2 class="header">Maps</h2>
+      <a href="#" data-target="slide-out" class="sidenav-trigger btn"><i class="material-icons">search</i></a>
       <div id="map" class="col s6 m12" style="width: 73vw; height: 100vh;"></div>
     </div>
   </div>
@@ -58,11 +113,18 @@
     <div class="parallax"><img src="./assets/imgs/cowboys.jpg" alt="concert">
     </div>
   </div>
-
-  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-  <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7"></script>
+  <script
+    src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=uRBFSZH5aWUxJrwjDWnkDuoSnTEQxMd7"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://kit.fontawesome.com/ee7eeb04f5.js" crossorigin="anonymous"></script>
   <script src="./assets/script.js"></script>
 </body>
 
 </html>
+<!-- TO DO LIST -->
+<!-- add background behind map -->
+<!-- WHEN a user searches for a event in the side nav THEN the past searches of that user are displayed to the left of the map -->
+<!-- WHEN a user clicks on a event from the top nav bar icons THEN it brings them to the map where icons of that event are displayed on the map -->
+<!-- WHEN a user clicks on a icon in the map THEN the side nav pops up dispaying information about that event -->

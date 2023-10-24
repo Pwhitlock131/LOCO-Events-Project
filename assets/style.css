@@ -1,24 +1,36 @@
+body{
+  background-color: rgb(10, 10, 129);
+}
+
 .parallax-container {
-  height: 800px;
+  height: 100vh;
 }
 
-.map{
-  box-shadow: 10;
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  z-index: 999;
+  background-color: #fff;
+  transition: left 0.3s;
 }
 
-/* #map {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sidenav a {
+  padding: 15px 15px 15px 30px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: color 0.3s;
 }
 
-.col.s5 {
-    padding: 20px;
+.sidenav a:hover {
+  color: #00796b;
 }
 
-.col.s6 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+@media only screen and (max-width: 992px) {
+  header {
+    padding-left: 0;
+  }
+}
