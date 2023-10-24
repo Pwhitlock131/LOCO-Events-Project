@@ -18,9 +18,3 @@ Users can also use the side nav by clicking the blue search button to search mor
 
 [LOCOEvents](https://pwhitlock131.github.io/LOCO-Events-Project/)
 
-
-
-
-
-6:05
-Updated readme without the screenshot or link cause its not live yet
